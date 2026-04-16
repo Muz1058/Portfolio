@@ -1,106 +1,80 @@
 export const projects = [
   {
     id: 1,
-    title: "Horizon Notifier — Chrome Extension",
-    category: "Personal",
-    tags: ["Live on Chrome Web Store"],
-    description: "A Chrome extension that aggregates UCP student portal updates (announcements, grades, submissions) into a real-time dashboard panel.",
-    highlights: [
-      "Dual-mode scan architecture (full scan + per-course background scan)",
-      "Multi-user identity detection via student registration numbers",
-      "Zero external server dependency — all local with real-time badge updates"
-    ],
-    tech: ["JavaScript", "Chrome Extensions API (MV3)", "Content Scripts", "Service Workers"],
-    liveUrl: "https://chrome.google.com/webstore/detail/kjdmbocinichinalcokbjingeoonkbkb",
-    githubUrl: "https://github.com/muz1058",
-    impactMetric: "Zero external server dependency — all local with real-time badge updates"
-  },
-  {
-    id: 2,
     title: "Admissions Management System",
     category: "Professional",
     tags: ["Government of Punjab"],
-    description: "A dynamic admissions portal for educational institutions with online applications, document verification, and merit list generation.",
-    highlights: [
-      "RESTful API integration between Angular frontend and .NET Core backend",
-      "Real-time notifications and email alerts",
-      "Encrypted storage and institutional data compliance"
-    ],
-    tech: ["ASP.NET Core", "Angular", "RESTful APIs", "SQL Server"],
+    problem: "The department needed a dynamic admissions portal to process thousands of applications efficiently, replacing out-dated paper processes and disjointed systems without compromising data security.",
+    solution: "I built a full-stack applicant tracking and shortlisting system. An Angular frontend provides a seamless applicant experience, while the .NET Core backend handles logic, real-time alerts, and encrypted institutional data compliance.",
+    result: "Deployed to production. It currently processes thousands of user applications and automates merit list generation, drastically reducing administrative overhead.",
+    tech: ["ASP.NET Core", "Angular", "REST APIs", "SQL Server"],
     liveUrl: null,
     githubUrl: null,
-    impactMetric: "Served thousands of government users"
+    impactMetric: "Thousands of applications processed automatically"
+  },
+  {
+    id: 2,
+    title: "Vendor & Applicant Management (CHI)",
+    category: "Professional",
+    tags: ["Government of Punjab"],
+    problem: "Processing adhoc job applications for Community Health Inspector roles required a rigorous document scrutiny pipeline with strict role-based access for different reviewer tiers.",
+    solution: "A scalable full-stack portal with granular role-based authentication. Reviewers have dedicated dashboards to track document submissions, while admins securely oversee the entire pipeline.",
+    result: "Successfully handles high application volumes. Efficient database indexing ensures the portal won't slow down under peak provincial load.",
+    tech: ["ASP.NET Core", "Entity Framework Core", "SQL Server"],
+    liveUrl: null,
+    githubUrl: null,
+    impactMetric: "Secure document management at provincial scale"
   },
   {
     id: 3,
-    title: "CHI — Vendor & Applicant Management",
+    title: "Hospital Staff Packages (HSPP)",
     category: "Professional",
     tags: ["Government of Punjab"],
-    description: "Comprehensive system managing adhoc job applications for Community Health Inspector roles — document submission, scrutiny, tracking.",
-    highlights: [
-      "Role-based authentication for admins and reviewers",
-      "Scalable EF + SQL Server queries under high application volumes"
-    ],
-    tech: ["ASP.NET Core", "Entity Framework Core", "SQL Server"],
+    problem: "The provincial health department needed a unified system to manage complex eligibility criteria for hospital staff benefits and special package allocations.",
+    solution: "A custom HR reporting and allocation system powered by highly normalized database schemas to handle variable eligibility rules without data duplication.",
+    result: "Deployed department-wide. Provides clear, immediate HR reporting dashboards directly to department heads, eliminating spreadsheet-based tracking errors.",
+    tech: ["ASP.NET Core", "SQL Server", "Entity Framework"],
     liveUrl: null,
     githubUrl: null,
-    impactMetric: "Scalable queries under high load"
+    impactMetric: "Eliminated spreadsheet errors for HR teams"
   },
   {
     id: 4,
-    title: "HSPP — Hospital Staff on Special Packages",
-    category: "Professional",
-    tags: ["Government of Punjab"],
-    description: "Management system for hospital staff benefits and special package allocations for the provincial health department.",
-    highlights: [
-      "Normalized DB schemas for eligibility and allocation criteria",
-      "HR reporting dashboards for department heads"
-    ],
-    tech: ["ASP.NET Core", "Entity Framework Core", "SQL Server"],
-    liveUrl: null,
-    githubUrl: null,
-    impactMetric: "Provincial health department HR reporting"
+    title: "Horizon Notifier Chrome Tool",
+    category: "Personal",
+    tags: ["Live on Chrome Web Store"],
+    problem: "Students were missing critical portal updates (grades, announcements) because they had to manually log in to the university portal multiple times a day.",
+    solution: "A lightweight Chrome extension that runs dual-mode background scans. It aggregates announcements and submittals into a real-time dashboard right in the browser.",
+    result: "Live on the Chrome Web Store. Operates with zero external server dependencies, running securely on the client-side for absolute privacy and real-time alerts.",
+    tech: ["JavaScript", "Chrome Extensions API (MV3)", "Service Workers"],
+    liveUrl: "https://chrome.google.com/webstore/detail/kjdmbocinichinalcokbjingeoonkbkb",
+    githubUrl: "https://github.com/muz1058",
+    impactMetric: "Zero-server, privacy-first real-time notifications"
   },
   {
     id: 5,
-    title: "YouTube Clone Backend",
-    category: "Academic",
-    tags: ["UCP"],
-    description: "RESTful APIs for a YouTube-style platform — user management, video uploads, comments, auth middleware.",
-    highlights: [],
-    tech: ["Node.js", "Express.js", "MongoDB"],
-    liveUrl: null,
-    githubUrl: null,
-    impactMetric: "RESTful APIs with auth middleware"
-  },
-  {
-    id: 6,
-    title: "Smart Parking System with Analytics",
-    category: "Academic",
-    tags: ["UCP"],
-    description: "Real-time parking management with VIP prioritization and analytics dashboard.",
-    highlights: [
-      "40% improvement in vehicle lookup time via optimized data structures",
-      "Circular Queue, HashMap, LinkedList implementation"
-    ],
-    tech: ["Java", "Data Structures", "Swing"],
-    liveUrl: null,
-    githubUrl: null,
-    impactMetric: "40% faster vehicle lookup"
-  },
-  {
-    id: 7,
     title: "School Principal Management App",
     category: "Personal",
     tags: ["Full-Stack", "Live Deployment"],
-    description: "A comprehensive web application designed for school administration, enabling principals and staff to manage administrative workflows efficiently.",
-    highlights: [
-      "Responsive user interface deployed on Vercel",
-      "Robust backend integration using Supabase architecture"
-    ],
+    problem: "School administrators often lack unified digital spaces to control administrative workflows, staff coordination, and daily operational tasks efficiently.",
+    solution: "A robust, responsive dashboard engineered exactly for school principals. Built with React and secured via a Supabase architecture for real-time reliable data delivery.",
+    result: "Live prototype deployed on Vercel, demonstrating how modern web stacks can securely handle complex administrative business logic.",
     tech: ["Next.js", "React", "Tailwind CSS", "Supabase"],
     liveUrl: "https://school-principal.vercel.app",
     githubUrl: "https://github.com/Muz1058/SchoolPrincipal",
-    impactMetric: "Live full-stack application"
+    impactMetric: "Modernized school administration tasks"
+  },
+  {
+    id: 6,
+    title: "Smart Parking & Analytics",
+    category: "Academic",
+    tags: ["Algorithms"],
+    problem: "Traditional parking systems suffer from severe lookup latency and poor prioritization logic during peak traffic hours.",
+    solution: "An intelligent management protocol leveraging specialized data structures (HashMap, LinkedList, Circular Queues) to optimize physical slot allocation and VIP prioritization.",
+    result: "Achieved a 40% improvement in vehicle lookup time. Proves the value of choosing the correct backend algorithms for physical systems.",
+    tech: ["Java", "Data Structures", "Swing"],
+    liveUrl: null,
+    githubUrl: null,
+    impactMetric: "40% faster sorting & lookup times"
   }
 ];

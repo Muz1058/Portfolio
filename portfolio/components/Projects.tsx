@@ -6,14 +6,14 @@ import { projects } from "@/data/projects";
 import ProjectCard from "./ProjectCard";
 
 export default function Projects() {
-  const [filter, setFilter] = useState("All");
+  const [filter, setFilter] = useState("Professional");
 
   const categories = ["All", ...Array.from(new Set(projects.map((p) => p.category)))];
 
   const filteredProjects = projects.filter((p) => filter === "All" || p.category === filter);
 
   return (
-    <section id="projects" className="py-24 relative">
+    <section id="work" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -22,7 +22,7 @@ export default function Projects() {
           transition={{ duration: 0.5 }}
           className="mb-12 text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Things I've Built</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">Work & Case Studies</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mb-8"></div>
           
           <div className="flex flex-wrap justify-center gap-2 md:gap-4 mt-8">
@@ -42,7 +42,7 @@ export default function Projects() {
           </div>
         </motion.div>
 
-        <motion.div layout className="grid md:grid-cols-2 gap-8">
+        <motion.div layout className="grid lg:grid-cols-2 gap-8">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, index) => (
               <ProjectCard key={project.id} project={project} index={index} />

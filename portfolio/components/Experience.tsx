@@ -6,7 +6,7 @@ import { Briefcase, GraduationCap, ChevronRight } from "lucide-react";
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 relative bg-card/20 border-y border-border backdrop-blur-3xl">
+    <section id="track-record" className="py-24 relative bg-card/20 border-y border-border backdrop-blur-3xl">
       <div className="max-w-4xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -15,8 +15,11 @@ export default function Experience() {
           transition={{ duration: 0.5 }}
           className="mb-16 text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Experience & Education</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">My Track Record</h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mb-6"></div>
+          <p className="text-lg text-muted max-w-2xl mx-auto">
+            Not side projects — real systems, real users, real stakes.
+          </p>
         </motion.div>
 
         <div className="relative border-l-2 border-border ml-3 md:ml-0 md:space-y-12 space-y-8">
@@ -45,14 +48,14 @@ export default function Experience() {
                 <h4 className="text-lg text-muted mb-4">{item.organization}</h4>
                 
                 {item.bullets.length > 0 && (
-                  <ul className="space-y-2 mt-4">
+                  <div className="space-y-4 mt-6">
                     {item.bullets.map((bullet, i) => (
-                      <li key={i} className="text-foreground/80 flex items-start">
-                        <span className="text-primary mr-2 shrink-0"><ChevronRight size={18} /></span>
-                        <span className="text-sm md:text-base pt-0.5">{bullet}</span>
-                      </li>
+                      <p key={i} className="text-foreground/90 flex items-start text-base leading-relaxed">
+                        <span className="text-primary mr-3 shrink-0"><ChevronRight size={20} className="mt-0.5" /></span>
+                        <span>{bullet}</span>
+                      </p>
                     ))}
-                  </ul>
+                  </div>
                 )}
               </div>
             </motion.div>

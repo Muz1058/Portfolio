@@ -2,15 +2,12 @@ export const experience = [
   {
     id: 1,
     type: "work",
-    role: "Software Developer Intern (.NET & Angular)",
+    role: "Software Developer (.NET & Angular)",
     organization: "Health & Population Department, Government of Punjab",
-    duration: "Sep 2025 – Feb 2026",
+    duration: "6 Months",
     bullets: [
-      "Built 4 enterprise production systems used by thousands of users",
-      "Reduced query response time ~35% via SQL Server optimization",
-      "Designed RESTful APIs for Angular–.NET Core integration",
-      "Implemented role-based auth, stored procedures, transaction safety",
-      "Agile team: feature development, debugging, code reviews"
+      "For 6 months I was embedded in the Government of Punjab's Health & Population Department engineering team, where I contributed to 4 production-grade systems.",
+      "These weren't prototypes — they handled real HR workflows, admissions processes, and staff management for thousands of users across Punjab."
     ]
   },
   {

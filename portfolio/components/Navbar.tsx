@@ -8,10 +8,9 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Experience", href: "#experience" },
-  { name: "Contact", href: "#contact" },
+  { name: "Services", href: "#services" },
+  { name: "Work", href: "#work" },
+  { name: "Track Record", href: "#track-record" },
 ];
 
 export default function Navbar() {
@@ -59,7 +58,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="hidden md:flex items-center">
+          <div className="hidden md:flex items-center gap-4">
             {mounted && (
               <button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -69,6 +68,12 @@ export default function Navbar() {
                 {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
               </button>
             )}
+            <Link 
+              href="#contact"
+              className="px-5 py-2 text-sm font-bold bg-primary text-[#0a0f1e] rounded-full shadow-md hover:bg-primary/90 transition-all"
+            >
+              Hire Me
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -100,7 +105,7 @@ export default function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border overflow-hidden"
           >
-            <div className="flex flex-col px-6 py-4 space-y-4">
+            <div className="flex flex-col px-6 py-6 space-y-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
@@ -111,6 +116,13 @@ export default function Navbar() {
                   {link.name}
                 </Link>
               ))}
+              <Link 
+                href="#contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full text-center px-5 py-3 text-base font-bold bg-primary text-[#0a0f1e] rounded-xl shadow-md"
+              >
+                Hire Me
+              </Link>
             </div>
           </motion.div>
         )}
