@@ -17,7 +17,6 @@ export const skills = [
   },
   {
     category: "Tools",
-    items: ["Git", "GitHub", "Postman", "Visual Studio", "VS Code"]
   },
   {
     category: "Concepts",

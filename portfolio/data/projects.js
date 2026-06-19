@@ -76,5 +76,18 @@ export const projects = [
     liveUrl: null,
     githubUrl: null,
     impactMetric: "40% faster sorting & lookup times"
+  },
+  {
+    id: 7,
+    title: "MyTube — Video Sharing Platform",
+    category: "Academic",
+    tags: ["Advance Web Programming"],
+    problem: "Building a YouTube-style platform end-to-end requires solving for secure auth, large media uploads, and a fast, responsive UI — all under semester-project constraints.",
+    solution: "A full-stack video sharing app with a separate Express/MongoDB API and a React 19 client. Auth uses JWT via httpOnly cookies with Bearer-token fallback, media is handled through Cloudinary, and the frontend runs on Redux Toolkit, React Router , and React Hook Form + Zod validation, styled with a YouTube-inspired dark theme in Tailwind CSS.",
+    result: "Deployed with a live frontend and a separate backend API repo, demonstrating a production-style split-service architecture rather than a single monolith.",
+    tech: ["React", "Redux Toolkit", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Cloudinary", "JWT"],
+    liveUrl: "https://mytubepk.vercel.app",
+    githubUrl: "https://github.com/Muz1058/MyTube-App",
+    impactMetric: "Full-stack split-service architecture (separate frontend & backend repos)"
   }
 ];
