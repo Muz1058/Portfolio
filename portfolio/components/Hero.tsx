@@ -1,17 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Download } from "lucide-react";
 import Link from "next/link";
-
-const trustBadges = [
-  "4 Production Systems Delivered",
-  "Government-Grade Security Practices",
-  "Available for Freelance Projects",
-  "Based in Lahore · Works Remotely"
-];
+import content from "@/data/content.json";
 
 export default function Hero() {
+  const { hero } = content.settings;
+
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
       <div className="noise-overlay"></div>
@@ -27,8 +23,8 @@ export default function Hero() {
               transition={{ duration: 0.5 }}
               className="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight"
             >
-              I Build Web Systems That <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Actually Work at Scale</span>
+              {hero.headlineLine1} <br className="hidden md:block" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">{hero.headlineLine2}</span>
             </motion.h1>
 
             <motion.p
@@ -37,7 +33,7 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-xl md:text-2xl text-muted max-w-3xl mx-auto leading-relaxed"
             >
-              From government portals serving thousands of users to custom business tools — I design, build, and deliver full-stack web applications that solve real problems.
+              {hero.subtext}
             </motion.p>
           </div>
 
@@ -48,18 +44,23 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-4 pt-4"
           >
             <Link
-              href="#contact"
+              href="#work"
               className="group flex items-center justify-center gap-2 px-8 py-4 bg-primary text-[#0a0f1e] font-bold rounded-full hover:bg-primary/90 transition-all shadow-[0_0_20px_rgba(0,212,255,0.3)] hover:shadow-[0_0_30px_rgba(0,212,255,0.5)]"
             >
-              Hire Me for Your Project
+              See My Work
               <ArrowRight className="group-hover:translate-x-1 transition-transform" />
             </Link>
             
-            <Link
-              href="#work"
+            <a
+              href="/Muzaffar_Ali_Resume.pdf"
+              download
               className="group flex items-center justify-center gap-2 px-8 py-4 bg-card text-foreground border border-border font-semibold rounded-full hover:bg-border/50 transition-all shadow-sm"
             >
-              See My Work
+              Download Resume
+              <Download size={18} />
+            </a>
+            <Link href="#contact" className="flex items-center justify-center px-6 py-4 font-semibold text-foreground hover:text-primary transition-colors">
+              Get in Touch
             </Link>
           </motion.div>
 
@@ -70,7 +71,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="pt-12 w-full max-w-4xl mx-auto flex flex-wrap justify-center gap-4 text-sm font-medium text-foreground/80"
           >
-            {trustBadges.map((badge, idx) => (
+            {hero.trustBadges.map((badge, idx) => (
               <span key={idx} className="flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-background/50 backdrop-blur-sm">
                 <CheckCircle2 size={16} className="text-secondary" />
                 {badge}

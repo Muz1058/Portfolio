@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { skills, currentlyLearning } from "@/data/skills";
+import content from "@/data/content.json";
 
 export default function Skills() {
   return (
@@ -14,7 +15,7 @@ export default function Skills() {
           transition={{ duration: 0.5 }}
           className="mb-16 text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Tech Stack</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{content.settings.sectionHeadings.skills}</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
         </motion.div>
 
@@ -43,28 +44,30 @@ export default function Skills() {
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-12 p-6 glass rounded-2xl max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6"
-        >
-          <div className="flex items-center gap-3">
-            <span className="relative flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-            </span>
-            <h3 className="text-lg font-semibold">Currently Learning:</h3>
-          </div>
-          <div className="flex flex-wrap gap-3 justify-center">
-            {currentlyLearning.map((item) => (
-              <span key={item} className="text-sm font-medium text-muted">
-                {item}
+        {currentlyLearning.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="mt-12 p-6 glass rounded-2xl max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6"
+          >
+            <div className="flex items-center gap-3">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
               </span>
-            ))}
-          </div>
-        </motion.div>
+              <h3 className="text-lg font-semibold">Currently Learning:</h3>
+            </div>
+            <div className="flex flex-wrap gap-3 justify-center">
+              {currentlyLearning.map((item) => (
+                <span key={item} className="text-sm font-medium text-muted">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+        )}
       </div>
     </section>
   );

@@ -4,9 +4,10 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { projects } from "@/data/projects";
 import ProjectCard from "./ProjectCard";
+import content from "@/data/content.json";
 
 export default function Projects() {
-  const [filter, setFilter] = useState("Professional");
+  const [filter, setFilter] = useState("All");
 
   const categories = ["All", ...Array.from(new Set(projects.map((p) => p.category)))];
 
@@ -22,7 +23,7 @@ export default function Projects() {
           transition={{ duration: 0.5 }}
           className="mb-12 text-center"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Work & Case Studies</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">{content.settings.sectionHeadings.projects}</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mb-8"></div>
           
           <div className="flex flex-wrap justify-center gap-2 md:gap-4 mt-8">

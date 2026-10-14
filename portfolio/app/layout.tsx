@@ -16,8 +16,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Muzaffar Ali - Full-Stack Developer",
-  description: "Software Engineering student at UCP Lahore with enterprise-level experience.",
+  title: "Muzaffar Ali - Full Stack Developer (.NET, Angular & AI)",
+  description:
+    "Full Stack Developer (ASP.NET Core, Angular, SQL Server) in Lahore. Built 4 production systems for the Government of Punjab and an AI deepfake-detection platform.",
+  openGraph: {
+    title: "Muzaffar Ali - Full Stack Developer",
+    description:
+      "ASP.NET Core, Angular and applied AI. Production systems for the Government of Punjab, plus an AI deepfake-detection platform.",
+    url: "https://muzaffar-ali.vercel.app",
+    siteName: "Muzaffar Ali",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

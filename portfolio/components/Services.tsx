@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { services } from "@/data/services";
 import { Monitor, Link as LinkIcon, Database, Puzzle, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import content from "@/data/content.json";
 
 const iconMap: Record<string, React.ReactNode> = {
   Monitor: <Monitor className="w-8 h-8" />,
@@ -23,7 +24,7 @@ export default function Services() {
           transition={{ duration: 0.5 }}
           className="mb-16 text-center"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">What Can I Build For You?</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">{content.settings.sectionHeadings.services}</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
         </motion.div>
 

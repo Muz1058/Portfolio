@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Briefcase, Phone, MessageCircle } from "lucide-react";
+import { Mail, Briefcase, MessageCircle } from "lucide-react";
 import Link from "next/link";
+import content from "@/data/content.json";
 
 export default function Contact() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -14,8 +15,8 @@ export default function Contact() {
     const budget = formData.get("budget") as string;
     const timeline = formData.get("timeline") as string;
 
-    const subject = encodeURIComponent(`New Project Inquiry from ${name}`);
-    const bodyText = `Project Details:\n${needs}\n\nBudget: ${budget}\nTimeline: ${timeline}\n\n---\nClient Info:\nName: ${name}\nEmail: ${email}`;
+    const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
+    const bodyText = `Message:\n${needs}\n\nOpportunity / Budget: ${budget}\nTimeline: ${timeline}\n\n---\nFrom: ${name}\nEmail: ${email}`;
     const body = encodeURIComponent(bodyText);
     
     window.location.href = `mailto:muzaffarali3633@gmail.com?subject=${subject}&body=${body}`;
@@ -31,11 +32,10 @@ export default function Contact() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Let's Build Something</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">{content.settings.sectionHeadings.contact}</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mb-6"></div>
           <p className="text-lg text-muted max-w-2xl mx-auto">
-            Have a web app, business tool, or idea you want built? 
-            Tell me what you need — I'll tell you if I can help and what it would take.
+            {content.settings.contact.intro}
           </p>
         </motion.div>
 
@@ -114,25 +114,26 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="needs" className="block text-sm font-bold text-foreground mb-2">What do you need built?</label>
+                <label htmlFor="needs" className="block text-sm font-bold text-foreground mb-2">{content.settings.contact.messageLabel}</label>
                 <textarea
                   id="needs"
                   name="needs"
                   required
                   rows={4}
                   className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
-                  placeholder="Describe your project, app idea, or current bottlenecks..."
+                  placeholder={content.settings.contact.messagePlaceholder}
                 ></textarea>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="budget" className="block text-sm font-bold text-foreground mb-2">Budget Range</label>
+                  <label htmlFor="budget" className="block text-sm font-bold text-foreground mb-2">{content.settings.contact.opportunityLabel}</label>
                   <select
                     id="budget"
                     name="budget"
                     className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary outline-none appearance-none cursor-pointer"
                   >
+                    <option value={content.settings.contact.fullTimeOption}>{content.settings.contact.fullTimeOption}</option>
                     <option value="Just exploring">Just exploring</option>
                     <option value="Under $500">Under $500</option>
                     <option value="$500 – $1,500">$500 – $1,500</option>

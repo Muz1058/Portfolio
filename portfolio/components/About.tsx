@@ -2,13 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-
-const stats = [
-  { label: "Production Systems Deployed", value: 4, suffix: "" },
-  { label: "Query Performance Improved", value: 35, suffix: "%" },
-  { label: "Months Government Internship", value: 6, suffix: "" },
-  { label: "Live Chrome Extension", value: 1, suffix: "" },
-];
+import content from "@/data/content.json";
 
 function CountUp({ end, suffix }: { end: number; suffix: string }) {
   const [count, setCount] = useState(0);
@@ -36,6 +30,7 @@ function CountUp({ end, suffix }: { end: number; suffix: string }) {
 
 export default function About() {
   const [isInView, setIsInView] = useState(false);
+  const { about } = content.settings;
 
   return (
     <section id="about" className="py-24 relative">
@@ -49,18 +44,13 @@ export default function About() {
         >
           <div className="space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold">
-              Engineering with <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Impact</span>
+              {about.headingStart} <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">{about.headingEnd}</span>
             </h2>
             <p className="text-lg text-muted leading-relaxed">
-              I'm a Software Engineering student at UCP Lahore with hands-on 
-              experience building enterprise-level systems for the Government of Punjab. 
-              I've shipped 4 production applications used by thousands of users across 
-              health and HR departments.
+              {about.paragraphs[0]}
             </p>
             <p className="text-lg text-muted leading-relaxed">
-              I work across the full stack — ASP.NET Core and Angular by day, 
-              Node.js and React when the problem calls for it. I believe in 
-              writing clean, scalable code that solves real-world problems.
+              {about.paragraphs[1]}
             </p>
           </div>
 
@@ -71,10 +61,10 @@ export default function About() {
               <div className="absolute inset-0 bg-card border border-border backdrop-blur-sm rounded-3xl -rotate-3 transition-transform group-hover:rotate-0 duration-500 flex items-center justify-center shadow-2xl overflow-hidden p-8">
                 <div className="font-mono text-xs md:text-sm text-primary/70 relative z-10 w-full">
                   <p>const developer = {'{'}</p>
-                  <p className="pl-4">name: "Muzaffar Ali",</p>
-                  <p className="pl-4">role: "Full-Stack Engineer",</p>
-                  <p className="pl-4">location: "Lahore, PK",</p>
-                  <p className="pl-4">status: "Building scale"</p>
+                  <p className="pl-4">name: &quot;{about.profile.name}&quot;,</p>
+                  <p className="pl-4">role: &quot;{about.profile.role}&quot;,</p>
+                  <p className="pl-4">location: &quot;{about.profile.location}&quot;,</p>
+                  <p className="pl-4">status: &quot;{about.profile.status}&quot;</p>
                   <p>{'};'}</p>
                   <br />
                   <p>developer.ship();</p>
@@ -93,7 +83,7 @@ export default function About() {
           onViewportEnter={() => setIsInView(true)}
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-border"
         >
-          {stats.map((stat, idx) => (
+          {about.stats.map((stat, idx) => (
             <div key={idx} className="flex flex-col items-center text-center px-4">
               {isInView ? <CountUp end={stat.value} suffix={stat.suffix} /> : <span className="text-4xl md:text-5xl font-extrabold text-primary">0{stat.suffix}</span>}
               <span className="mt-2 text-sm font-medium text-muted">{stat.label}</span>

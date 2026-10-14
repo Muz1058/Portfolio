@@ -8,9 +8,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { name: "About", href: "#about" },
-  { name: "Services", href: "#services" },
   { name: "Work", href: "#work" },
+  { name: "Skills", href: "#skills" },
   { name: "Track Record", href: "#track-record" },
+  { name: "Services", href: "#services" },
 ];
 
 export default function Navbar() {
@@ -72,7 +73,7 @@ export default function Navbar() {
               href="#contact"
               className="px-5 py-2 text-sm font-bold bg-primary text-[#0a0f1e] rounded-full shadow-md hover:bg-primary/90 transition-all"
             >
-              Hire Me
+              Contact
             </Link>
           </div>
 
@@ -121,7 +122,7 @@ export default function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full text-center px-5 py-3 text-base font-bold bg-primary text-[#0a0f1e] rounded-xl shadow-md"
               >
-                Hire Me
+                Contact
               </Link>
             </div>
           </motion.div>

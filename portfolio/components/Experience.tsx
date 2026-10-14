@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { experience } from "@/data/experience";
 import { Briefcase, GraduationCap, ChevronRight } from "lucide-react";
+import content from "@/data/content.json";
 
 export default function Experience() {
   return (
@@ -15,10 +16,10 @@ export default function Experience() {
           transition={{ duration: 0.5 }}
           className="mb-16 text-center"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">My Track Record</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">{content.settings.sectionHeadings.experience}</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mb-6"></div>
           <p className="text-lg text-muted max-w-2xl mx-auto">
-            Not side projects — real systems, real users, real stakes.
+            {content.settings.sectionHeadings.experienceIntro}
           </p>
         </motion.div>
 

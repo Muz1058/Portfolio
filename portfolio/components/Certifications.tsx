@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { certifications } from "@/data/certifications";
 import { Award, ExternalLink } from "lucide-react";
+import content from "@/data/content.json";
 
 export default function Certifications() {
   return (
@@ -15,7 +16,7 @@ export default function Certifications() {
           transition={{ duration: 0.5 }}
           className="mb-16 text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Certifications</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{content.settings.sectionHeadings.certifications}</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
         </motion.div>
 
